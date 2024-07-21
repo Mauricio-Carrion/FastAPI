@@ -1,15 +1,14 @@
 from fastapi import FastAPI
 
-from app import models
-from app.api.api_v1.endpoints import user
-from app.db.database import Base, engine, SessionLocal
+from app.api.api_v1.endpoints import user, map
+from app.db.database import Base, engine
 
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-
 app.include_router(user.router, prefix="/users", tags=["users"])
+app.include_router(map.router, prefix="/map", tags=["map"])
 
 
 @app.get('/')

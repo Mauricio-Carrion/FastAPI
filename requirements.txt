@@ -1,6 +1,8 @@
 fastapi~=0.111.1
 sqlalchemy~=2.0.31
-alembic
+alembic~=1.13.2
 uvicorn
 psycopg2-binary
 pydantic~=2.8.2
+
+folium~=0.17.0
